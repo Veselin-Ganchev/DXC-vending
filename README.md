@@ -22,7 +22,7 @@ Simple vending machine web application made with ReactJS, TypeScript and Local A
 - Set by the API
   - BGN
 
-## Accepted Coin Denominations
+## Accepted Coin values
 
 - Set by the API
   - 0.05
