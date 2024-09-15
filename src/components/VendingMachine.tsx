@@ -25,6 +25,10 @@ const VendingMachine: React.FC = () => {
   const handleBuyProduct = () => {
     if (!selectedItem) {
       setMessage(`Please select product!`);
+    } else if (selectedItem.quantity <= 0) {
+      setMessage(
+        `Out of stock, please select another product ot reset your purchase`
+      );
     } else if (selectedItem && insertedCoins >= selectedItem.price) {
       const change = insertedCoins - selectedItem.price;
       setMessage(
@@ -36,6 +40,7 @@ const VendingMachine: React.FC = () => {
         ...selectedItem,
         quantity: selectedItem.quantity - 1,
       });
+
       setInsertedCoins(0);
       handleSelectProduct(null);
     } else {

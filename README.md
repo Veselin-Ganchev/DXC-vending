@@ -12,10 +12,11 @@
 
 Simple vending machine web application made with ReactJS, TypeScript and Local API.
 
-## Actions:
+## Functionality:
 
 - Insert coins, select products, buy product and reset the machine.
 - Returns change and has option to reset the transaction.
+- Disables a product when it runs out of stock
 
 ## Denomination
 
