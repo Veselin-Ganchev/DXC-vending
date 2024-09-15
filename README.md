@@ -12,8 +12,10 @@
 
 Simple vending machine web application made with ReactJS, TypeScript and Local API.
 
-- You can insert coins, select products, buy product and reset the machine.
-- The machine returns change and allows users to reset the transaction.
+## Actions:
+
+- Insert coins, select products, buy product and reset the machine.
+- Returns change and has option to reset the transaction.
 
 ## Denomination
 
@@ -32,6 +34,23 @@ Simple vending machine web application made with ReactJS, TypeScript and Local A
 
 ## How to Build and Start the Project
 
-1. Clone the repository:
-   Repo URL
-   git clone <repository-url>
+1. Clone Github repository:
+   git clone https://github.com/Veselin-Ganchev/DXC-vending.git
+
+2. Navigate to the project root folder
+   cd dxc-vending
+
+3. Install all necessary packages:
+   npm install
+   or
+   yarn install
+
+4. Run json-server to access the local API:
+   npm run server
+   or
+   yarn server
+
+5. Run the project:
+   npm start
+   or
+   yarn start
