@@ -64,7 +64,7 @@ const VendingMachine: React.FC = () => {
             >
               Inventar
             </Typography>
-            <ItemsList denomination={denomination} />
+            <ItemsList />
           </Box>
           <Box sx={vendingMachineStyles.sectionWrapper}>
             <Typography

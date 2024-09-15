@@ -3,8 +3,9 @@ import { ItemContext } from "../../context/ItemContext";
 import { Button, Grid2, Typography } from "@mui/material";
 import { vendingMachineStyles } from "../VendingMachineStyles";
 
-const ItemList = ({ denomination }: { denomination: string | null }) => {
-  const { items, selectedItem, handleSelectProduct } = useContext(ItemContext)!;
+const ItemList = () => {
+  const { items, denomination, selectedItem, handleSelectProduct } =
+    useContext(ItemContext)!;
   return (
     <Grid2 container sx={vendingMachineStyles.itemList} spacing={2}>
       {items.map((item) => (
@@ -19,8 +20,7 @@ const ItemList = ({ denomination }: { denomination: string | null }) => {
           ]}
         >
           <Typography variant="body1">
-            {item.name} - {item.price + " " + denomination} ({item.quantity}{" "}
-            left)
+            {`${item.name} - ${item.price} ${denomination} ${item.quantity} left`}
           </Typography>
           <Button
             variant="contained"
