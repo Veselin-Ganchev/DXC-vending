@@ -1,0 +1,89 @@
+{
+    "vendingData": {
+        "products": [
+            {
+                "id": 1,
+                "name": "Coca Cola",
+                "price": 1.5,
+                "quantity": 10
+            },
+            {
+                "id": 4,
+                "name": "Monster",
+                "price": 3,
+                "quantity": 7
+            },
+            {
+                "id": 5,
+                "name": "Peanuts",
+                "price": 2.0,
+                "quantity": 9
+            },
+            {
+                "id": 7,
+                "name": "Cookies",
+                "price": 4.5,
+                "quantity": 11
+            },
+            {
+                "id": 9,
+                "name": "Chips",
+                "price": 2.75,
+                "quantity": 5
+            },
+            {
+                "id": 11,
+                "name": "Water",
+                "price": 0.5,
+                "quantity": 10
+            },
+            {
+                "id": 13,
+                "name": "Milk",
+                "price": 1.25,
+                "quantity": 3
+            },
+            {
+                "id": 14,
+                "name": "Coffee",
+                "price": 0.5,
+                "quantity": 14
+            },
+            {
+                "id": 15,
+                "name": "Candy",
+                "price": 0.75,
+                "quantity": 5
+            }
+        ],
+        "coinValues": [
+            {
+                "id": 1,
+                "value": 0.05
+            },
+            {
+                "id": 2,
+                "value": 0.1
+            },
+            {
+                "id": 3,
+                "value": 0.2
+            },
+            {
+                "id": 4,
+                "value": 0.5
+            },
+            {
+                "id": 5,
+                "value": 1
+            },
+            {
+                "id": 6,
+                "value": 2
+            }
+        ],
+        "coinDenomination": {
+            "denomination": "BGN"
+        }
+    }
+}
