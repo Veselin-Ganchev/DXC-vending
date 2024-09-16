@@ -3,7 +3,7 @@ import { ItemContext } from "../../context/ItemContext";
 import { Button, Grid2, Typography } from "@mui/material";
 import { vendingMachineStyles } from "../VendingMachineStyles";
 
-const ItemList = () => {
+const ItemList: React.FC = () => {
   const { items, denomination, selectedItem, handleSelectProduct } =
     useContext(ItemContext)!;
 
@@ -21,7 +21,11 @@ const ItemList = () => {
           ]}
         >
           <Typography variant="body1">
-            {`${item.name} - ${item.price} ${denomination} (${item.quantity} left)`}
+            {item.name}
+            <br />
+            {item.price + " " + denomination}
+            <br />
+            {`(${item.quantity} left)`}
           </Typography>
           <Button
             disabled={item.quantity === 0}

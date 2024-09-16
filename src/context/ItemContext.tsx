@@ -12,6 +12,9 @@ interface VendingItemContextType {
   updateVendingItem: (item: VendingItem) => void;
   deleteVendingItem: (id: number) => void;
   handleSelectProduct: (item: VendingItem | null) => void;
+  handleInsertCoin: (amount: number) => void;
+  insertedCoins: number;
+  setInsertedCoins: (value: number) => void;
 }
 
 export const ItemContext = createContext<VendingItemContextType | undefined>(
@@ -25,6 +28,7 @@ interface ItemProviderProps {
 const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
   const [items, setItems] = useState<VendingItem[]>([]);
   const [coins, setCoins] = useState<CoinItem[] | null>(null);
+  const [insertedCoins, setInsertedCoins] = useState<number>(0);
   const [denomination, setDenomination] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState<VendingItem | null>(null);
 
@@ -60,6 +64,10 @@ const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
     setSelectedItem(item);
   };
 
+  const handleInsertCoin = (amount: number) => {
+    setInsertedCoins(insertedCoins + amount);
+  };
+
   return (
     <ItemContext.Provider
       value={{
@@ -71,6 +79,9 @@ const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
         updateVendingItem,
         deleteVendingItem,
         handleSelectProduct,
+        handleInsertCoin,
+        insertedCoins,
+        setInsertedCoins,
       }}
     >
       {children}

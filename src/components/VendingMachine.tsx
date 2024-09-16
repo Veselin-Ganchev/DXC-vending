@@ -6,21 +6,18 @@ import Box from "@mui/material/Box";
 import { Grid2 } from "@mui/material";
 import { vendingMachineStyles } from "./VendingMachineStyles";
 import ItemsList from "./ItemList/ItemList";
+import CoinsList from "./CoinsList/CoinsList";
 
 const VendingMachine: React.FC = () => {
   const {
-    coins,
     denomination,
     selectedItem,
     updateVendingItem,
     handleSelectProduct,
+    insertedCoins,
+    setInsertedCoins,
   } = useContext(ItemContext)!;
-  const [insertedCoins, setInsertedCoins] = useState<number>(0);
   const [message, setMessage] = useState<string>("");
-
-  const handleInsertCoin = (amount: number) => {
-    setInsertedCoins(insertedCoins + amount);
-  };
 
   const handleBuyProduct = () => {
     if (!selectedItem) {
@@ -79,22 +76,9 @@ const VendingMachine: React.FC = () => {
             >
               Insert Coins
             </Typography>
-            <Grid2 container>
-              {coins &&
-                coins.map((amount) => (
-                  <Grid2 key={amount.id} size={{ xs: 12, sm: 6, md: 3 }}>
-                    <Button
-                      sx={vendingMachineStyles.coinButton}
-                      onClick={() => handleInsertCoin(amount.value)}
-                    >
-                      {amount.value.toFixed(2) + " " + denomination}
-                    </Button>
-                  </Grid2>
-                ))}
-            </Grid2>
+            <CoinsList />
           </Box>
         </Grid2>
-
         <Grid2 size={{ xs: 12, md: 3 }}>
           <Box sx={vendingMachineStyles.sectionWrapper}>
             <Typography variant="h4">
