@@ -17,13 +17,13 @@ interface VendingItemContextType {
   setInsertedCoins: (value: number) => void;
 }
 
-export const ItemContext = createContext<VendingItemContextType | undefined>(
-  undefined
-);
-
 interface ItemProviderProps {
   children: ReactNode;
 }
+
+export const ItemContext = createContext<VendingItemContextType | undefined>(
+  undefined
+);
 
 const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
   const [items, setItems] = useState<VendingItem[]>([]);
