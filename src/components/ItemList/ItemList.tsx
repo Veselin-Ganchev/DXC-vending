@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ItemContext } from "../../context/ItemContext";
 import { Button, Grid2, Typography } from "@mui/material";
 import { vendingMachineStyles } from "../VendingMachineStyles";
