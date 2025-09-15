@@ -3,7 +3,7 @@ import { ItemContext } from "../context/ItemContext";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { Grid2 } from "@mui/material";
+import Grid2 from "@mui/material/Grid2";
 import { vendingMachineStyles } from "./VendingMachineStyles";
 import ItemsList from "./ItemList/ItemList";
 import CoinsList from "./CoinsList/CoinsList";

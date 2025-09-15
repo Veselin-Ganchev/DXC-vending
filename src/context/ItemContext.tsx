@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
-import axios from "axios";
 import { VendingItem } from "../types/VendingItem";
 import { CoinItem } from "../types/CoinItem";
 
@@ -33,17 +32,19 @@ const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState<VendingItem | null>(null);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/vendingData")
-      .then((response) => {
-        const { products, coinValues, coinDenomination } = response.data;
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/vendingData");
+        const data = await res.json();
+        const { products, coinValues, coinDenomination } = data;
         setItems(products);
         setCoins(coinValues);
         setDenomination(coinDenomination.denomination);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
 
   const addVendingItem = (item: VendingItem) => {
@@ -65,7 +66,7 @@ const ItemProvider: React.FC<ItemProviderProps> = ({ children }) => {
   };
 
   const handleInsertCoin = (amount: number) => {
-    setInsertedCoins(insertedCoins + amount);
+    setInsertedCoins((prev) => prev + amount);
   };
 
   return (

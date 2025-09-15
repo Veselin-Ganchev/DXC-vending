@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Button, Grid2 } from "@mui/material";
+import { Button } from "@mui/material";
+import Grid2 from "@mui/material/Grid2";
 import { ItemContext } from "../../context/ItemContext";
 import { vendingMachineStyles } from "../VendingMachineStyles";
 

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ItemContext } from "../../context/ItemContext";
-import { Button, Grid2, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
+import Grid2 from "@mui/material/Grid2";
 import { vendingMachineStyles } from "../VendingMachineStyles";
 
 const ItemList: React.FC = () => {
